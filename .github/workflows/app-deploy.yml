@@ -42,6 +42,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "stock-pshynin"
           heroku_email: "pshynin@yahoo.com"
-          branch: ${{ steps.extract_branch.outputs.branch }}
+          branch: ${{ steps.branch_name.outputs.branch }}
           dontuseforce: false
 
