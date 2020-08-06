@@ -38,5 +38,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "stock-pshynin"
           heroku_email: "pshynin@yahoo.com"
-          branch: pshynin.analyzer
           dontuseforce: false
+          branch: pshynin.analyzer
