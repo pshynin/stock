@@ -40,9 +40,8 @@ jobs:
         id: extract_branch
       - name: Deploy into Heroku
         run: |
-          git fetch --all --unshallow
-          git remote add heroku-staging https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/stock-pshynin.git
-          git push heroku-staging HEAD:${{ steps.extract_branch.outputs.branch }} -f
+          git config remote.heroku.push +HEAD:refs/heads/master
+          git push -f heroku HEAD:master
       - name: Deploy Heroku app
         uses: akhileshns/heroku-deploy@v3.4.6
         with:
