@@ -37,7 +37,7 @@ jobs:
       - name: Deploy to Heroku
         run: |
           git remote -v
-     #     git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+          git remote add heroku-staging https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
           git push heroku-staging HEAD:master -f
       - name: Deploy Heroku app
         uses: akhileshns/heroku-deploy@v3.4.6
