@@ -36,7 +36,6 @@ jobs:
           python3 -m pytest
       - name: Deploy to Heroku
         run: |
-          heroku create
           git remote -v
           git remote add heroku-staging https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/stock-app.git
           git push heroku-staging HEAD:master -f
