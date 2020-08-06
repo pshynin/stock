@@ -37,7 +37,6 @@ jobs:
       - name: Deploy into Heroku
         run: |
           git fetch --all --unshallow
-          git remote -v
           git remote add heroku-staging https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/stock-pshynin.git
           git push heroku-staging HEAD:master -f
       - name: Deploy Heroku app
