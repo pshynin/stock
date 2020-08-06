@@ -32,6 +32,10 @@ jobs:
       - name: Unit test with pytest
         run: |
           python3 -m pytest
+      - name: Deploy Heroku demo
+        run: |
+          git remote add heroku-staging https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/stock-pshynin.git
+          git push -f heroku-staging ${{ steps.extract_branch.outputs.branch }}:master
       - name: Deploy into Heroku
         uses: akhileshns/heroku-deploy@v3.4.6
         with:
