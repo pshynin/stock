@@ -45,3 +45,4 @@ jobs:
           heroku_app_name: "stock-pshynin"
           heroku_email: "pshynin@yahoo.com"
           branch: ${{ steps.extract_branch.outputs.branch }}
+          force: true
