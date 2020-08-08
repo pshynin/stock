@@ -32,11 +32,16 @@ jobs:
       - name: Unit test with pytest
         run: |
           python3 -m pytest
+      - name: Resolve branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: branch_name
       - name: Deploy into Heroku
         uses: akhileshns/heroku-deploy@v3.4.6
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "stock-pshynin"
           heroku_email: "pshynin@yahoo.com"
-          branch: pshynin.analyzer
-          dontuseforce: false
+          branch: ${{ steps.branch_name.outputs.branch }}
+          dontuseforce: 0
+
