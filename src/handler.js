@@ -13,7 +13,3 @@ module.exports.hello = async event => {
     ),
   };
 };
-
-module.exports.stock = (evt, ctx, done) => {
-    return { message: evt };
-}

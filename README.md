@@ -16,8 +16,14 @@ serverless.yml - configuration for serverless framework
     functions - specify name and path for the lambda function   
     
     
-# Test
+# Usage
 To run a function on localstack use invoke command:
-`sls invoke local -f hello`
+```
+sls invoke local -f hello
+```
+or to test a function with arguments specify path to a json data file:
+```
+sls invoke local -p event.json -f hello
+```
  
     
