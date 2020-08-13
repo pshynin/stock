@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: npm install
-        uses: actions/npm@master
+        uses: actions/npm@v2-beta
         with:
           args: install
 
