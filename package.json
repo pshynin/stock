@@ -6,7 +6,7 @@
   },
   "scripts": {
     "dev": "sls offline start --port 4500",
-    "test": "serverless-with-aws-master/node_modules/.bin/jest"
+    "test": "demo/node_modules/.bin/jest"
   },
   "devDependencies": {
     "jest": "^22.4.3",
