@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '12'
           check-latest: true
-        run: npm install
+          args: npm install
 
       - name: Serverless Deploy
         uses: serverless/github-action@master
