@@ -7,14 +7,17 @@ jobs:
     name: build and deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+          uses: actions/checkout@master
 
-      - name: npm install
-        uses: actions/npm@v2-beta
+      - name: Install Dependencies
+        uses: actions/setup-node@v2
         with:
-          args: install
+          node-version: '12'
+          check-latest: true
+        run: npm install
 
-      - name: serverless deploy
+      - name: Serverless Deploy
         uses: serverless/github-action@master
         with:
           args: deploy
