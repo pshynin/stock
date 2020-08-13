@@ -22,8 +22,8 @@ provider:
   #environment:
   #  variable1: value1
 
-plugins:
-  - serverless-offline
+# plugins:
+#  - serverless-offline
 
 functions:
   hello:
